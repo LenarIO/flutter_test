@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'newFutureScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -53,7 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text('Это ветка NEW FUTURE'),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NewFutureWidget()));
+                },
+                child: const Text('Это Окно NEW FUTURE')),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
